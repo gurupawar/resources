@@ -98,8 +98,8 @@ window.onscroll = function () {
 
 function scrollFunction() {
   if (
-    document.body.scrollTop > 250 ||
-    document.documentElement.scrollTop > 250
+    document.body.scrollTop > 100 ||
+    document.documentElement.scrollTop > 100
   ) {
     document.querySelector(".category").style.backgroundColor = "white";
     document.querySelector(".drop_down").style.backgroundColor = "black";

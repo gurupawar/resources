@@ -152,9 +152,10 @@ th:not([align]) {
 }
 
 .header__container {
-  height: 300px;
+  height: 100px;
   width: 100%;
-  background: #eee;
+  background: -webkit-gradient(linear, left top, right top, from(#000428), to(#004e92));
+  background: linear-gradient(to right, #000428, #004e92);
   position: relative;
 }
 
