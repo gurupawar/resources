@@ -61,11 +61,14 @@ header {
       background: rgba(255, 255, 255, 0.2);
       color: #fff;
       font-weight: 100;
-      padding: 0 5px;
+      font-size: 14px;
+      outline: none;
+      border: 0;
+      padding: 2px 5px;
 
       option {
-        background: rgba(255, 255, 255, 0.2);
         color: #000;
+        background: rgba(255, 255, 255, 0.2);
       }
     }
   }

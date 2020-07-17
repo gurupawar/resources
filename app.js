@@ -5,6 +5,7 @@ function createNode(element) {
   return document.createElement(element);
 }
 
+var data;
 fetch(apiLink)
   .then((response) => {
     if (response.ok) {
@@ -14,7 +15,8 @@ fetch(apiLink)
     }
   })
   .then((resData) => {
-    const categories = resData.categories;
+    data = resData;
+    const categories = data.categories;
     for (var i = 0; i < categories.length; i++) {
       var selectList = document.querySelector("#select_list");
       var optionList = new Option(categories[i], categories[i]);
@@ -22,8 +24,8 @@ fetch(apiLink)
     }
     var selectedItem = [0];
 
-    const uiDesing = resData.websites[`${selectedItem}`];
-    console.log(uiDesing);
+    const uiDesing = data.websites[`${selectedItem}`];
+    // console.log(uiDesing);
     // for each start
     uiDesing.forEach((element) => {
       // card
@@ -77,6 +79,6 @@ fetch(apiLink)
     // for each end
     selectList.addEventListener("change", () => {
       selectedItem = selectList.selectedIndex;
-      console.log(selectedItem);
+      // console.log(selectedItem);
     });
   });
