@@ -1,4 +1,5 @@
 var cardContainer = document.querySelector(".container");
+var selectList = document.querySelector("#select_list");
 
 var apiLink = "https://api.theindex.tech/";
 function createNode(element) {
@@ -17,15 +18,27 @@ fetch(apiLink)
   .then((resData) => {
     data = resData;
     const categories = data.categories;
+
+    var selectedItem = [0];
+
+    //  drop down list
     for (var i = 0; i < categories.length; i++) {
-      var selectList = document.querySelector("#select_list");
       var optionList = new Option(categories[i], categories[i]);
       selectList.appendChild(optionList);
+      if (categories[i] === "Icons") {
+        optionList.selected = true;
+      }
     }
-    var selectedItem = [0];
+
+    // drop down list click listner
+    selectList.addEventListener("change", () => {
+      selectedItem = selectList.selectedIndex;
+      console.log(selectedItem);
+    });
 
     const uiDesing = data.websites[`${selectedItem}`];
     // console.log(uiDesing);
+
     // for each start
     uiDesing.forEach((element) => {
       // card
@@ -77,8 +90,23 @@ fetch(apiLink)
       card_link.appendChild(i);
     });
     // for each end
-    selectList.addEventListener("change", () => {
-      selectedItem = selectList.selectedIndex;
-      // console.log(selectedItem);
-    });
   });
+
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 250 ||
+    document.documentElement.scrollTop > 250
+  ) {
+    document.querySelector(".category").style.backgroundColor = "white";
+    document.querySelector(".drop_down").style.backgroundColor = "black";
+  } else {
+    document.querySelector(".category").style.backgroundColor =
+      "rgba(255, 255, 255, 0.2)";
+    document.querySelector(".drop_down").style.backgroundColor =
+      "rgba(255, 255, 255, 0.2)";
+  }
+}

@@ -19,6 +19,7 @@ body {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 article,
@@ -142,6 +143,12 @@ th:not([align]) {
   header menu a + a {
     margin-left: 0.3rem;
   }
+  .category {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
 }
 
 .header__container {
@@ -199,9 +206,6 @@ header menu a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   padding: 0 1rem;
 }
 
@@ -224,10 +228,9 @@ header menu a {
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
   font-weight: 100;
-  font-size: 14px;
   outline: none;
   border: 0;
-  padding: 2px 5px;
+  padding: 2px 10px;
 }
 
 .category .drop_down .list option {
