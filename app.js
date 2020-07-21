@@ -22,6 +22,7 @@ function loadData(indexs = 0) {
       category = resData.categories;
 
       data = resData.websites[`${indexs}`];
+
       for (var i = 0; i < category.length; i++) {
         var optionList = new Option(category[i], category[i]);
         selectList.appendChild(optionList);
