@@ -18,15 +18,15 @@ function loadData(indexs = 0) {
     })
 
     .then((resData) => {
-      console.log(resData);
+      // console.log(resData);
       category = resData.categories;
 
       data = resData.websites[`${indexs}`];
 
-      for (var i = 0; i < category.length; i++) {
-        var optionList = new Option(category[i], category[i]);
-        selectList.appendChild(optionList);
-      }
+      // for (var i = 0; i < category.length; i++) {
+      //   var optionList = new Option(category[i], category[i]);
+      //   selectList.appendChild(optionList);
+      // }
 
       // for each start
       data.forEach((element) => {
@@ -86,4 +86,23 @@ selectList.addEventListener("change", function () {
   selectedItem = selectList.selectedIndex;
   loadData(selectedItem);
 });
+
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 250 ||
+    document.documentElement.scrollTop > 250
+  ) {
+    document.querySelector(".category").style.backgroundColor = "white";
+    document.querySelector(".drop_down").style.backgroundColor = "black";
+  } else {
+    document.querySelector(".category").style.backgroundColor =
+      "rgba(255, 255, 255, 0.2)";
+    document.querySelector(".drop_down").style.backgroundColor =
+      "rgba(255, 255, 255, 0.2)";
+  }
+}
 loadData();
