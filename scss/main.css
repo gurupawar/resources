@@ -259,6 +259,7 @@ header menu a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background: rgba(255, 255, 255, 0.2);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
