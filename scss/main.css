@@ -114,7 +114,7 @@ th:not([align]) {
   header {
     padding: 0.8rem 5rem;
   }
-  header menu a + a {
+  header a menu a + a {
     margin-left: 1rem;
   }
 }
@@ -323,7 +323,7 @@ header menu a {
   .card {
     background: rgba(255, 255, 255, 0.2);
     -webkit-backdrop-filter: blur(8.5px);
-            backdrop-filter: blur(8.5px);
+    backdrop-filter: blur(8.5px);
   }
 }
 /*# sourceMappingURL=main.css.map */

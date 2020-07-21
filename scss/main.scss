@@ -35,6 +35,7 @@ header {
 }
 
 .category {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   background: rgba(255, 255, 255, 0.2);
@@ -129,9 +130,10 @@ header {
   }
 }
 
-@supports (backdrop-filter: none) {
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   .card {
     background: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(8.5px);
     backdrop-filter: blur(8.5px);
   }
 }
