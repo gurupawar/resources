@@ -154,8 +154,6 @@ th:not([align]) {
 .header__container {
   height: 100px;
   width: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#000428), to(#004e92));
-  background: linear-gradient(to right, #000428, #004e92);
   position: relative;
 }
 
@@ -318,13 +316,5 @@ header menu a {
 .card:hover {
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
-}
-
-@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-  .card {
-    background: rgba(255, 255, 255, 0.2);
-    -webkit-backdrop-filter: blur(8.5px);
-    backdrop-filter: blur(8.5px);
-  }
 }
 /*# sourceMappingURL=main.css.map */
