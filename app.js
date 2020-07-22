@@ -1,5 +1,8 @@
+var body = document.querySelector("body");
 var cardContainer = document.querySelector(".container");
 var selectList = document.getElementById("select_list");
+
+const loader = document.getElementById("loader");
 
 var apiLink = "https://api.theindex.tech/";
 
@@ -8,6 +11,7 @@ function createNode(element) {
 }
 
 function loadData(indexs = 0) {
+  loader.removeAttribute("hidden");
   fetch(apiLink)
     .then((response) => {
       if (response.ok) {
@@ -18,6 +22,7 @@ function loadData(indexs = 0) {
     })
 
     .then((resData) => {
+      loader.setAttribute("hidden", "");
       data = resData.websites[`${indexs}`];
 
       // for each start
@@ -73,8 +78,10 @@ function loadData(indexs = 0) {
       // for each end
     });
 }
+
 selectList.addEventListener("change", function () {
   cardContainer.innerHTML = "";
+
   selectedItem = selectList.selectedIndex;
   loadData(selectedItem);
 });
