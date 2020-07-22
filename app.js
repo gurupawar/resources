@@ -1,10 +1,9 @@
-var body = document.querySelector("body");
-var cardContainer = document.querySelector(".container");
-var selectList = document.getElementById("select_list");
-
-const loader = document.getElementById("loader");
-
-var apiLink = "https://api.theindex.tech/";
+let body = document.querySelector("body");
+let cardContainer = document.querySelector(".container");
+let selectList = document.getElementById("select_list");
+let loader = document.getElementById("loader");
+let footer = document.querySelector(".footer");
+let apiLink = "https://api.theindex.tech/";
 
 function createNode(element) {
   return document.createElement(element);
@@ -12,6 +11,7 @@ function createNode(element) {
 
 function loadData(indexs = 0) {
   loader.removeAttribute("hidden");
+  footer.style.display = "none";
   fetch(apiLink)
     .then((response) => {
       if (response.ok) {
@@ -23,6 +23,7 @@ function loadData(indexs = 0) {
 
     .then((resData) => {
       loader.setAttribute("hidden", "");
+      footer.style.display = "block";
       data = resData.websites[`${indexs}`];
 
       // for each start
@@ -34,6 +35,9 @@ function loadData(indexs = 0) {
         // card title
         const cardTitle = createNode("div");
         cardTitle.setAttribute("class", "card_title");
+        const a = createNode("a");
+        a.href = element.link;
+        a.setAttribute("target", "_blank");
         const h4 = createNode("h4");
         h4.textContent = element.title;
 
@@ -62,11 +66,11 @@ function loadData(indexs = 0) {
         card_link.setAttribute("target", "_blank");
         const i = createNode("i");
         i.setAttribute("class", "fa fa-external-link");
-
         //append
         cardContainer.appendChild(card);
         card.appendChild(cardTitle);
-        cardTitle.appendChild(h4);
+        cardTitle.appendChild(a);
+        a.appendChild(h4);
         card.appendChild(cardDiscription);
         cardDiscription.appendChild(p);
         card.appendChild(cardLogo);
@@ -75,13 +79,31 @@ function loadData(indexs = 0) {
         resouceLink.appendChild(card_link);
         card_link.appendChild(i);
       });
+
       // for each end
+
+      (function scrollReveal() {
+        window.sr = ScrollReveal();
+
+        sr.reveal(
+          ".card",
+          {
+            duration: 800,
+            distance: "40px",
+            easing: "ease-out",
+            origin: "bottom",
+            reset: true,
+            scale: 1,
+            viewFactor: 0,
+          },
+          150
+        );
+      })();
     });
 }
 
 selectList.addEventListener("change", function () {
   cardContainer.innerHTML = "";
-
   selectedItem = selectList.selectedIndex;
   loadData(selectedItem);
 });
@@ -92,8 +114,8 @@ window.onscroll = function () {
 
 function scrollFunction() {
   if (
-    document.body.scrollTop > 250 ||
-    document.documentElement.scrollTop > 250
+    document.body.scrollTop > 150 ||
+    document.documentElement.scrollTop > 150
   ) {
     document.querySelector(".category").style.backgroundColor = "white";
     document.querySelector(".drop_down").style.backgroundColor = "black";

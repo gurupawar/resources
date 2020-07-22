@@ -7,8 +7,8 @@
 html,
 body {
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#000428), to(#004e92));
-  background: linear-gradient(to right, #000428, #004e92);
+  background: -webkit-gradient(linear, left top, right top, from(#0f2027), color-stop(#203a43), to(#2c5364));
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   font-family: "Titillium Web", sans-serif;
 }
 
@@ -151,16 +151,7 @@ th:not([align]) {
   }
 }
 
-.header__container {
-  height: 100px;
-  width: 100%;
-  position: relative;
-}
-
 header {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   background: #fff;
   display: -webkit-box;
@@ -182,6 +173,10 @@ header .logo {
 header menu a {
   text-transform: capitalize;
   font-weight: 400;
+}
+
+header menu .fa-github {
+  font-size: 2rem;
 }
 
 .wrapper {
@@ -318,6 +313,24 @@ header menu a {
           transform: translateY(-5px);
 }
 
+@-webkit-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 #loader:not([hidden]) {
   position: fixed;
   top: 0;
@@ -340,11 +353,11 @@ header menu a {
   width: 40px;
   height: 40px;
   border: 5px solid #f3f3f3;
-  border-top: 5px solid #004e92;
+  border-top: 5px solid #2c5364;
   border-radius: 100%;
   will-change: transform;
-  -webkit-animation: spin 1s infinite linear;
-          animation: spin 1s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
 }
 
 @-webkit-keyframes spin {
@@ -367,5 +380,30 @@ header menu a {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
+}
+
+.footer {
+  display: none;
+  width: 100%;
+}
+
+.footer .credit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  margin-top: 5rem;
+  color: #fff;
+}
+
+.footer .credit .fa-heart {
+  color: #f06373;
 }
 /*# sourceMappingURL=main.css.map */

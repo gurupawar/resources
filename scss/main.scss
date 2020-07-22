@@ -1,16 +1,7 @@
 @import "reset";
 @import "screen";
 
-.header__container {
-  height: 100px;
-  width: 100%;
-  // background: linear-gradient(to right, #000428, #004e92);
-  position: relative;
-}
 header {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   background: #fff;
   display: flex;
@@ -24,6 +15,9 @@ header {
     a {
       text-transform: capitalize;
       font-weight: 400;
+    }
+    .fa-github {
+      font-size: 2rem;
     }
   }
 }
@@ -130,7 +124,15 @@ header {
     transform: translateY(-5px);
   }
 }
-
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+// loader
 #loader:not([hidden]) {
   position: fixed;
   top: 0;
@@ -147,10 +149,20 @@ header {
   width: 40px;
   height: 40px;
   border: 5px solid #f3f3f3;
-  border-top: 5px solid #004e92;
+  border-top: 5px solid #2c5364;
   border-radius: 100%;
   will-change: transform;
-  animation: spin 1s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
@@ -159,5 +171,23 @@ header {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.footer {
+  display: none;
+  width: 100%;
+  .credit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    margin-top: 5rem;
+
+    color: #fff;
+    .fa-heart {
+      color: #f06373;
+    }
   }
 }
