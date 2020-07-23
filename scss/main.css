@@ -271,6 +271,10 @@ header menu .fa-github {
   text-transform: capitalize;
 }
 
+.card .card_title a {
+  width: auto;
+}
+
 .card .card_discription {
   font-size: 13px;
   font-weight: 100;

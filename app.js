@@ -26,9 +26,21 @@ function loadData(indexs = 0) {
       footer.style.display = "block";
       data = resData.websites[`${indexs}`];
 
+      let arr = resData.websites[2];
+
+      var GradientME = {
+        category: "Colors",
+        description: "Awesome gradient colors",
+        link: "https://gurupawar.github.io/gradientme/",
+        logo: "https://gurupawar.github.io/gradientme/assets/logo.png",
+        title: "GradientME",
+      };
+      arr.push(GradientME);
+
       // for each start
       data.forEach((element) => {
         // card
+
         const card = createNode("div");
         card.setAttribute("class", "card");
 
@@ -82,6 +94,7 @@ function loadData(indexs = 0) {
 
       // for each end
 
+      // Reveal Animation
       (function scrollReveal() {
         window.sr = ScrollReveal();
 
@@ -99,6 +112,7 @@ function loadData(indexs = 0) {
           150
         );
       })();
+      // Reveal Animation End
     });
 }
 
