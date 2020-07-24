@@ -50,15 +50,14 @@ function loadData(indexs = 0) {
         const a = createNode("a");
         a.href = element.link;
         a.setAttribute("target", "_blank");
-        const h4 = createNode("h4");
-        h4.textContent = element.title;
+        a.textContent = element.title;
 
         // card discription
         const cardDiscription = createNode("div");
         cardDiscription.setAttribute("class", "card_discription");
         const p = createNode("p");
         element.description = element.description.substring(0, 70);
-        p.textContent = element.description;
+        p.textContent = element.description + "...";
 
         // card logo
         const cardLogo = createNode("div");
@@ -82,7 +81,6 @@ function loadData(indexs = 0) {
         cardContainer.appendChild(card);
         card.appendChild(cardTitle);
         cardTitle.appendChild(a);
-        a.appendChild(h4);
         card.appendChild(cardDiscription);
         cardDiscription.appendChild(p);
         card.appendChild(cardLogo);
