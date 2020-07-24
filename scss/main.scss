@@ -10,6 +10,10 @@ header {
   .logo {
     font-weight: 600;
     font-size: 1.2rem;
+    img {
+      height: 45px;
+      width: auto;
+    }
   }
   menu {
     a {
