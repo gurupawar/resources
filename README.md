@@ -1,4 +1,4 @@
-## Design Resources For Developers 😉
+## Design Resources For Web Developers 😉
 
 > _list of design and UI resources from stock photos, web templates, CSS frameworks, JS framewroks, React frameworks, Vue and Angular frameworkds, UI libraries, Font, Font-Icons, Icons, Mockups, Online Design tool and much more..._
 
@@ -34,10 +34,6 @@ http://resources.gurupawar.info
 - Design Inspiration
 - Image Compression
 - Others
-
-## API 🔥
-
-https://api.theindex.tech/
 
 ## License📜
 
