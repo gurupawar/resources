@@ -35,6 +35,14 @@ http://resources.gurupawar.info
 - Image Compression
 - Others
 
+## API Used from api.theindex.tech ⚡️
+
+[API](https://api.theindex.tech/)
+
+## Give a Star ⭐️ if you liked it ⚡️
+
+If you want to contribute, feel free to make a Pull Request. ☘️☘️
+
 ## License📜
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE) file for details.
