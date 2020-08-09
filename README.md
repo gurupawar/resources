@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="400" height="300" src="aseets/mockup.png">
+</p>
+
 ## Design Resources For Web Developers 😉
 
 > _list of design and UI resources from stock photos, web templates, CSS frameworks, JS framewroks, React frameworks, Vue and Angular frameworkds, UI libraries, Font, Font-Icons, Icons, Mockups, Online Design tool and much more..._
