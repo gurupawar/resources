@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="400" height="300" src="aseets/mockup.png">
+  <img width="500" height="280" src="aseets/mockup.png">
 </p>
 
 ## Design Resources For Web Developers 😉
